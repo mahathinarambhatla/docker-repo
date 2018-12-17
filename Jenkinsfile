@@ -13,14 +13,13 @@ pipeline
            steps
             {
 	         sh 'docker build -f "Dockerfile" -t trial:1.0  .'  
-                 withDockerRegistry(credentialsId: 'b9ba9580-ebea-417d-b0d3-17857027692b', url: 'http://35.231.84.239:8081/#admin/repository/repositories:docker-trial') 
+                 withDockerRegistry(credentialsId: 'b9ba9580-ebea-417d-b0d3-17857027692b', url: 'http://35.231.84.239:8082') 
                      {
 			 sh '''
 			 whoami
-			 docker tag "${repo_name}.$version.$BUILD_NUMBER" "${image}" 
-			 docker push  "${image}" 
-			 docker rmi -f "${image}"   "${repo_name}.$version.$BUILD_NUMBER" 
-			 '''
+			 docker tag "trial1.0" "docker-trial/trial" 
+			 docker push  "docker-trial/trial" 
+			'''
                      }                  
 		    }
         }
