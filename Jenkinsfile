@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     stages {
-        stage('Test') 
+        stage "test"
             def  app = docker.build "your-project-name"
               
         
