@@ -1,10 +1,9 @@
 pipeline {
-    agent { dockerfile true }
+    agent any
     stages {
         stage('Test') {
             steps {
-                sh 'whoami'
-                sh 'python --version'
+                 app = docker.build()
               }
         }
     }
