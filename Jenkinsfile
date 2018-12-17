@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'whoami
+                sh 'whoami'
                 sh 'python --version'
               }
         }
