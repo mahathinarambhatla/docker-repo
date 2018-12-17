@@ -2,11 +2,9 @@ pipeline {
     agent any
     
     stages {
-        stage('Test') {
-            def app
-            steps {
-                 app = docker.build "your-project-name"
-              }
-        }
+        stage('Test') 
+            def  app = docker.build "your-project-name"
+              
+        
     }
 }
